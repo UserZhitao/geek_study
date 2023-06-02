@@ -1,3 +1,5 @@
+import pytest
+
 
 class HeroManagement:
     def __init__(self):
@@ -24,10 +26,10 @@ class HeroManagement:
                 return self.hero_list
         return False
 
-    def create_hero(self, hero_name, hero_volume, hero_power):
-        if not isinstance(hero_name,str):
+    def create_hero(self, hero_name, hero_volume, hero_power,get_hero_volume_limit):
+        if not isinstance(hero_name,str) or hero_name.isspace() or len(hero_name) == 0:
             return False
-        if not type(hero_volume) == int or hero_volume<=0 or hero_volume >= 100:
+        if not type(hero_volume) == int or hero_volume<=get_hero_volume_limit[0] or hero_volume >= get_hero_volume_limit[1]:
             return False
         if not type(hero_power) == int or hero_power <=0:
             return False

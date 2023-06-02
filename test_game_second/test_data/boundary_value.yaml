@@ -1,0 +1,37 @@
+#add hero test data
+#测试英雄姓名的边界值：字符串长度 / 字符串类型
+#
+#输入一个最短长度的姓名（1个字符）
+#输入一个最长长度的姓名（例如100个字符）
+#输入一个包含特殊字符的姓名（如@、#、$等）
+#输入一个全是空格的姓名
+#输入一个空字符串-->''
+#测试血量的边界值：
+#
+#输入血量的最小值（1）
+#输入血量的最大值（99）
+#输入一个小于1的值 -->0
+#输入一个超过99的值 -->100
+#输入一个负数
+#Reasonable boundary value:
+# hero_name: [A,sdfghjklllertyuiop;;#$%#%$#]
+# hero_volume: [1,2,98,99]
+#
+#Invalid boundary value:
+# hero_name: [ '','     '] #
+# hero_volume: [ 0,100,-1 ]
+
+ boundary value:
+  hero_name:
+    A: True
+    sdfghjklllertyuiop;;#$%#%$#: True
+    '': False
+    '    ': False
+  hero_volume:
+    1: True
+    2: True
+    98: True
+    99: True
+    0: False
+    100: False
+    -1: False

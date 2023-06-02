@@ -8,8 +8,8 @@ def run_tests():
     print(directory_path)
     report_path = os.path.abspath(os.path.join(directory_path,'report')) + '/allure-xml'
     print(report_path)
-
-    args = ["-s",
+    new_add_hero_case_path = os.path.abspath(os.path.join(directory_path,'test_game_second','test_hero_add.py'))
+    args = ["-s",new_add_hero_case_path,
             "--alluredir", report_path, "--clean-alluredir"
             ]
 

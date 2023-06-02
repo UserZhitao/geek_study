@@ -1,0 +1,25 @@
+#add hero test data
+#英雄姓名 --> 字符串有效，空/空格/数字/bool无效
+#英雄血量 --> 满足条件的有效数字， 字符串/bool/负数
+#英雄攻击力 --> 正整数有效，0/-1/浮点数/字符串/bool
+
+effective equivalence class:
+  - [zhangsan, 1, 30] #name 有效， volume在合理范围内， power 正整数
+  - [zhaoliu, 99, 10]
+  - [sunqi, 50, 5000]
+
+invalid equivalence class:
+  - [1, 1, 30] #name is number
+  - [False, 1, 30] #name is bool
+  - ['', 1, 30] #name is ''
+  - ['    ', 1, 30] #name is '     '
+  - [ test01, 'abc', 20] #volume is string
+  - [test01, True, 10] #valume is bool
+  - [test01, 0, 10] #volume is 0
+  - [test01, 100, 5000] #volume is 100
+  - [test01, -1, 10] #volume is 0
+  - [test01, 45, 0]  #power is 0
+  - [test01, 45, -1]  #power < 0
+  - [test01, 45, 'abc'] #power is str
+  - [test01, 45, True] #power is bool
+  - [test01, 45, 10.00] #power is float
