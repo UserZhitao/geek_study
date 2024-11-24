@@ -1,4 +1,5 @@
-import ImageGrab
+# import ImageGrab
+from PIL import ImageGrab
 from PIL import ImageDraw
 import base64
 import os
